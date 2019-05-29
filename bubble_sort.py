@@ -1,24 +1,18 @@
 arr = [1,3,2,6,5,2,1]
+arr2 = [6,5,4,3,2,1]
 
 # array = [1,3,2,6,5]
 # bubble_sort(array)
 # array = [1,2,3,5,6]
 
 def bubble_sort(array):
-    i = 0
     is_sorted = True
 
-    while i < len(array) - 1:
-        curr_val = array[i]
-        next_index = i + 1
-        next_val = array[next_index]
+    for i in range(0, len(array) - 1):
 
-        if curr_val > next_val:
+        if array[i] > array[i + 1]:
             is_sorted = False
-            array[next_index] = curr_val
-            array[i] = next_val
-
-        i += 1
+            array[i], array[i + 1] = array[i + 1], array[i]
 
     if is_sorted:
         return array
@@ -26,3 +20,4 @@ def bubble_sort(array):
         return bubble_sort(array)
 
 print(bubble_sort(arr))
+print(bubble_sort(arr2))
